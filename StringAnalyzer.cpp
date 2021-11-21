@@ -15,7 +15,7 @@ vector<int> getVectorOfCharacter(vector<string> data)
 	return numVec;
 }
 
-string getLargestString(vector<string> data)
+string getLargest(vector<string> data)
 {
 	int index = 0;
     for(int i = 0; i < data.size(); i++)
@@ -27,7 +27,7 @@ string getLargestString(vector<string> data)
 }
 
 
-string getSmallestString(vector<string> data)
+string getSmallest(vector<string> data)
 {
 	int index = 0;
     for(int i = 0; i < data.size(); i++)
@@ -38,14 +38,14 @@ string getSmallestString(vector<string> data)
     return data[index];
 }
 
-string getLexicographicallyLastString(vector<string> data)
+string getLexicographicallyLast(vector<string> data)
 {
 	sort(data.begin(), data.end());
 	return data[data.size() -1];
 }
 
 
-string getLexicographicallyFirstString(vector<string> data)
+string getLexicographicallyFirst(vector<string> data)
 {
 	sort(data.begin(), data.end());
 	return data[0];
@@ -53,6 +53,7 @@ string getLexicographicallyFirstString(vector<string> data)
 
 int main()
 {
+	// generate string data to process
 	vector<string> data;
 	data.push_back("Hi");
 	data.push_back("How are you doing?");
@@ -61,10 +62,10 @@ int main()
 	data.push_back("Have you ever danced with volves during a full moon?");
 
 	vector<int> res =  getVectorOfCharacter(data);
-	string lexFirst = getLexicographicallyFirstString(data);
-	string lexLast = getLexicographicallyLastString(data);
-	string small = getSmallestString(data);
-	string large = getLargestString(data);
+	string lexFirst = getLexicographicallyFirst(data);
+	string lexLast = getLexicographicallyLast(data);
+	string largest = getLargest(data);
+	string smallest = getSmallest(data);
 	
 	cout << "Character lengthwise vector : " << endl;
 	
@@ -74,10 +75,10 @@ int main()
 	}
 	
 	cout << endl << endl;
-	cout << "Smallest String                =>  " << small << endl;
-	cout << "Largest String                 =>  " << large << endl;
-	cout << "Lexicographically First String =>  " << lexFirst << endl;
-	cout << "Lexicographically Last String  =>  " << lexLast << endl;
+	cout << "Smallest                =>  " << smallest << endl;
+	cout << "Largest                 =>  " << largest << endl;
+	cout << "Lexicographically first =>  " << lexFirst << endl;
+	cout << "Lexicographically last  =>  " << lexLast << endl;
 
 	// let user read the output and press any key to exit
 	system("pause");
